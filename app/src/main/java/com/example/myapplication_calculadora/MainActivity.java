@@ -23,27 +23,31 @@ public class MainActivity extends AppCompatActivity {
 
 @Override
 public void onClick(View v) {
-        if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()){
-        Toast.makeText(getBaseContext(),  "faltan numeros a ingresar",Toast.LENGTH_SHORT).show();
+    if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()) {
+        Toast.makeText(getBaseContext(), "faltan numeros a ingresar", Toast.LENGTH_SHORT).show();
         return;
+    }
         Integer Num1 = Integer.parseInt(editTextNum1.getText().toString());
         Integer Num2 = Integer.parseInt(editTextNum2.getText().toString());
-        Integer suma =  Num1 + Num2;
-        Toast.makeText(getBaseContext(), "resultado"+ suma.toString(),Toast.LENGTH_SHORT).show();
+        Integer suma = Num1 + Num2;
+        Toast.makeText(getBaseContext(), "resultado" + suma.toString(), Toast.LENGTH_SHORT).show();
+    }
+   });
 
-        }
         resta.setOnClickListener(new View.OnClickListener(){
 
 @Override
 public void onClick (View v) {
-        if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()){
-        Toast.makeText(getBaseContext(),  "faltan numeros a ingresar",Toast.LENGTH_SHORT).show();
-        return;
+        if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()) {
+            Toast.makeText(getBaseContext(), "faltan numeros a ingresar", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Integer Num1 = Integer.parseInt(editTextNum1.getText().toString());
         Integer Num2 = Integer.parseInt(editTextNum2.getText().toString());
         Integer resta =  Num1 - Num2;
         Toast.makeText(getBaseContext(), "resultado"+ resta.toString(),Toast.LENGTH_SHORT).show();
         }
+       });
         multiplicacion.setOnClickListener (new View.OnClickListener() {
 @Override
 public void onClick(View v) {
@@ -55,8 +59,8 @@ public void onClick(View v) {
         Integer Num2 = Integer.parseInt(editTextNum2.getText().toString());
         Integer multiplicacion =  Num1 * Num2;
         Toast.makeText(getBaseContext(), "resultado"+ multiplicacion.toString(),Toast.LENGTH_SHORT).show();
-              }
-        );}
+        }
+        });
 
         division.setOnClickListener (new View.OnClickListener() {
             @Override
@@ -74,3 +78,4 @@ public void onClick(View v) {
             }
 
         }
+    );}}
