@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F44336"
+    android:background="#B035C5"
     tools:context=".MainActivity">
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="50dp"
-        android:background="#009688"
+        android:background="#2196F3"
         android:ems="10"
         android:inputType="number"
         android:text="numero 2"
@@ -63,8 +63,8 @@
 
     <Button
         android:id="@+id/Suma"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
+        android:layout_width="162dp"
+        android:layout_height="49dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="20dp"
@@ -109,16 +109,16 @@
 
     <Button
         android:id="@+id/Division"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
+        android:layout_width="168dp"
+        android:layout_height="57dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:background="#9C27B0"
         android:text="Division"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Resta" />
 
