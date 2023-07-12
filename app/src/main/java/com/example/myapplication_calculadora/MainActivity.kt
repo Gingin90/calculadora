@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
             }
             val Num1 = editTextNum1.text.toString().toInt()
             val Num2 = editTextNum2.text.toString().toInt()
-            val suma = Num1 + Num2
-            Toast.makeText(baseContext, "resultado$suma", Toast.LENGTH_SHORT).show()
+            val resultadoSuma = Num1 + Num2
+            Toast.makeText(baseContext, "resultado$resultadoSuma", Toast.LENGTH_SHORT).show()
         })
         resta.setOnClickListener(View.OnClickListener {
             if (editTextNum1.text.toString().trim { it <= ' ' }
@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
             }
             val Num1 = editTextNum1.text.toString().toInt()
             val Num2 = editTextNum2.text.toString().toInt()
-            val resta = Num1 - Num2
-            Toast.makeText(baseContext, "resultado$resta", Toast.LENGTH_SHORT).show()
+            val resultadoResta = Num1 - Num2
+            Toast.makeText(baseContext, "resultado$resultadoResta", Toast.LENGTH_SHORT).show()
         })
         multiplicacion.setOnClickListener(View.OnClickListener {
             if (editTextNum1.text.toString().trim { it <= ' ' }
@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
             }
             val Num1 = editTextNum1.text.toString().toInt()
             val Num2 = editTextNum2.text.toString().toInt()
-            val multiplicacion = Num1 * Num2
-            Toast.makeText(baseContext, "resultado$multiplicacion", Toast.LENGTH_SHORT).show()
+            val resultadoMultiplicacion = Num1 * Num2
+            Toast.makeText(baseContext, "resultado$resultadoMultiplicacion", Toast.LENGTH_SHORT).show()
         })
         division.setOnClickListener(View.OnClickListener {
             if (editTextNum1.text.toString().trim { it <= ' ' }
@@ -63,8 +63,8 @@ class MainActivity : AppCompatActivity() {
             }
             val Num1: Double =editTextNum1.text.toString().toDouble()
             val Num2 = editTextNum2.text.toString().toDouble()
-            val division = Num1 / Num2
-            Toast.makeText(baseContext, "resultado$division", Toast.LENGTH_SHORT).show()
+            val resultadoDivision = Num1 / Num2
+            Toast.makeText(baseContext, "resultado$resultadoDivision ", Toast.LENGTH_SHORT).show()
         }
         )
     }
