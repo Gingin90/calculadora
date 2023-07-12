@@ -1,86 +1,71 @@
-package com.example.myapplication_calculadora;
+package com.example.myapplication_calculadora
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-public class MainActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button suma = findViewById(R.id.Suma);
-        Button resta = findViewById(R.id.Resta);
-        Button multiplicacion = findViewById(R.id.Multiplicacion);
-        Button division = findViewById(R.id.Division);
-
-        EditText editTextNum1 = findViewById(R.id.editTextNum1);
-        EditText editTextNum2 = findViewById(R.id.editTextNum2);
-
-        suma.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "faltan numeros a ingresar", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Integer Num1 = Integer.parseInt(editTextNum1.getText().toString());
-                Integer Num2 = Integer.parseInt(editTextNum2.getText().toString());
-                Integer suma = Num1 + Num2;
-                Toast.makeText(getBaseContext(), "resultado" + suma.toString(), Toast.LENGTH_SHORT).show();
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val suma = findViewById<Button>(R.id.Suma)
+        val resta = findViewById<Button>(R.id.Resta)
+        val multiplicacion = findViewById<Button>(R.id.Multiplicacion)
+        val division = findViewById<Button>(R.id.Division)
+        val editTextNum1 = findViewById<EditText>(R.id.editTextNum1)
+        val editTextNum2 = findViewById<EditText>(R.id.editTextNum2)
+        suma.setOnClickListener(View.OnClickListener {
+            if (editTextNum1.text.toString().trim { it <= ' ' }
+                    .isEmpty() || editTextNum2.text.toString().trim { it <= ' ' }.isEmpty()) {
+                Toast.makeText(baseContext, "faltan numeros a ingresar", Toast.LENGTH_SHORT).show()
+                return@OnClickListener
             }
-        });
-
-        resta.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "faltan numeros a ingresar", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Integer Num1 = Integer.parseInt(editTextNum1.getText().toString());
-                Integer Num2 = Integer.parseInt(editTextNum2.getText().toString());
-                Integer resta = Num1 - Num2;
-                Toast.makeText(getBaseContext(), "resultado" + resta.toString(), Toast.LENGTH_SHORT).show();
+            val Num1 = editTextNum1.text.toString().toInt()
+            val Num2 = editTextNum2.text.toString().toInt()
+            val suma = Num1 + Num2
+            Toast.makeText(baseContext, "resultado$suma", Toast.LENGTH_SHORT).show()
+        })
+        resta.setOnClickListener(View.OnClickListener {
+            if (editTextNum1.text.toString().trim { it <= ' ' }
+                    .isEmpty() || editTextNum2.text.toString().trim { it <= ' ' }
+                    .isEmpty()) {
+                Toast.makeText(baseContext, "faltan numeros a ingresar", Toast.LENGTH_SHORT).show()
+                return@OnClickListener
             }
-        });
-        multiplicacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "faltan numeros a ingresar", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Integer Num1 = Integer.parseInt(editTextNum1.getText().toString());
-                Integer Num2 = Integer.parseInt(editTextNum2.getText().toString());
-                Integer multiplicacion = Num1 * Num2;
-                Toast.makeText(getBaseContext(), "resultado" + multiplicacion.toString(), Toast.LENGTH_SHORT).show();
+            val Num1 = editTextNum1.text.toString().toInt()
+            val Num2 = editTextNum2.text.toString().toInt()
+            val resta = Num1 - Num2
+            Toast.makeText(baseContext, "resultado$resta", Toast.LENGTH_SHORT).show()
+        })
+        multiplicacion.setOnClickListener(View.OnClickListener {
+            if (editTextNum1.text.toString().trim { it <= ' ' }
+                    .isEmpty() || editTextNum2.text.toString().trim { it <= ' ' }
+                    .isEmpty()) {
+                Toast.makeText(baseContext, "faltan numeros a ingresar", Toast.LENGTH_SHORT).show()
+                return@OnClickListener
             }
-        });
-
-        division.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            if (editTextNum1.getText().toString().trim().isEmpty() || editTextNum2.getText().toString().trim().isEmpty()) {
-                                                Toast.makeText(getBaseContext(), "faltan numeros a ingresar", Toast.LENGTH_SHORT).show();
-                                                if (Integer.parseInt(editTextNum2.getText().toString()) == 0) {
-                                                    return;
-                                                }
-                                            }
-                                            Double Num1 = Double.valueOf(Integer.parseInt(editTextNum1.getText().toString()));
-                                            Double Num2 = Double.valueOf(editTextNum2.getText().toString());
-                                            Double division = Num1 / Num2;
-                                            Toast.makeText(getBaseContext(), "resultado" + division.toString(), Toast.LENGTH_SHORT).show();
-
-                                        }
-
-                                    }
-        );
+            val Num1 = editTextNum1.text.toString().toInt()
+            val Num2 = editTextNum2.text.toString().toInt()
+            val multiplicacion = Num1 * Num2
+            Toast.makeText(baseContext, "resultado$multiplicacion", Toast.LENGTH_SHORT).show()
+        })
+        division.setOnClickListener(View.OnClickListener {
+            if (editTextNum1.text.toString().trim { it <= ' ' }
+                    .isEmpty() || editTextNum2.text.toString().trim { it <= ' ' }
+                    .isEmpty()) {
+                Toast.makeText(baseContext, "faltan numeros a ingresar", Toast.LENGTH_SHORT).show()
+                if (editTextNum2.text.toString().toInt() == 0) {
+                    return@OnClickListener
+                }
+            }
+            val Num1: Double =editTextNum1.text.toString().toDouble()
+            val Num2 = editTextNum2.text.toString().toDouble()
+            val division = Num1 / Num2
+            Toast.makeText(baseContext, "resultado$division", Toast.LENGTH_SHORT).show()
+        }
+        )
     }
 }
